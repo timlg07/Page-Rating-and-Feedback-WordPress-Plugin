@@ -1,4 +1,3 @@
-
 <div class="wph wph-wrapper wph-simple wph-<?php echo $show_feedback; ?>">
   <div class="wph-inner">
     <form action="<?php echo admin_url( 'admin-post.php?action=save_feedback' ); ?>" class="wph-form">

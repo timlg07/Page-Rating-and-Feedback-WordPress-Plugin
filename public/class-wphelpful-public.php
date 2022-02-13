@@ -169,17 +169,7 @@ class WPHelpful_Public extends WPHelpful_Common {
 
     if ( ! in_array( get_post_type( $post_id ), $this->get_enabled_post_types() ) ) return;
     if ( ! $this->post_is_enabled( $post_id ) ) return;
-
-    $template = get_option($this->plugin_name . '_template', 'emojis');
-    if ( isset( $atts['template'] ) && !empty( $atts['template'] ) ) {
-      if ( $atts['template'] === 'emoji' ) $atts['template'] = 'emojis';
-      if ( $atts['template'] === 'star' ) $atts['template'] = 'stars';
-      if ( is_file( dirname(__FILE__) . '/partials/wphelpful-templates-' . $atts['template'] . '.php' ) ) {
-        $template = $atts['template'];
-      } else {
-        error_log($this->plugin_name . " line " . __LINE__ . ": (Warning) Unknown template type -- " . $atts['template'] . " -- loading default template type ($template).");
-      }
-    }
+    
     $show_feedback = get_option($this->plugin_name . '_show_feedback', 'always');
     
     $uid = uniqid();
@@ -214,7 +204,7 @@ class WPHelpful_Public extends WPHelpful_Common {
     $allow_anonymous = get_option($this->plugin_name . '_anonymous', 'false');
 
     ob_start();
-    include 'partials/wphelpful-templates-' . $template  . '.php';
+    include 'partials/wphelpful-template.php';
     return ob_get_clean();
   }
 
