@@ -1,1 +1,1 @@
-# Page-Rating-and-Feedback-WordPress-Plugin
+# Page Rating and Feedback ─ WordPress Plugin
