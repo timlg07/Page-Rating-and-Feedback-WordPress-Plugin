@@ -18,12 +18,7 @@ $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 
 <div class="wphelpful-settings wrap">
   
-  <h1><a href="https://wphelpful.com" target="_blank"><?php 
-    printf(
-      '<img src="%1$s" alt="WPHelpful" width="30px" />', 
-      plugins_url( '/images/wph.png', dirname(__FILE__) ) 
-    ); 
-  ?></a></h1>
+  <h1><a href="https://wphelpful.com" target="_blank"><?php printf('<img src="%1$s" alt="WPHelpful" width="30px" />', plugins_url( '/images/wph.png', dirname(__FILE__) ) ); ?></a></h1>
 
   <nav class="nav-tab-wrapper">
     <a href="?page=wphelpful&amp;tab=general" class="nav-tab<?php echo $active_tab == 'general' ? ' nav-tab-active' : ''; ?>">General</a>
